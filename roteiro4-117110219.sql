@@ -1,3 +1,38 @@
+-- MATEUS DE LIMA OLIVEIRA - 117110219
+-- Q1
+SELECT * FROM department;
+-- Q2
+SELECT * FROM dependent;
+-- Q3
+SELECT * FROM dept_locations;
+-- Q4
+SELECT * FROM employee;
+-- Q5
+SELECT * FROM project;
+-- Q6
+SELECT * FROM works_on;
+-- Q7
+SELECT fname, lname
+FROM employee
+WHERE sex='M';
+-- Q8
+SELECT fname
+FROM employee
+WHERE superssn IS NULL;
+--Q9 - DUVIDA REVISAR
+SELECT E.fname AS funcionario, S.fname AS supervisor
+FROM employee E, employee S
+WHERE E.superssn = S.ssn;
+-- Q10
+SELECT fname
+FROM employee 
+WHERE superssn = (  SELECT ssn
+                    FROM employee
+                    WHERE fname = 'Franklin');
+-- Q11
+SELECT D.dname, L.dlocation
+FROM dept_locations L, department D
+WHERE L.dnumber = D.dnumber;
 -- Q12
 SELECT D.dname AS nome
 FROM department D, dept_locations L
